@@ -104,13 +104,13 @@
 }
 
 .navbar-dark .navbar-brand img {
-    max-height: 60px;
+    /* max-height: 60px; */
     transition: .5s;
 }
 
-.sticky-top.navbar-dark .navbar-brand img {
+/* .sticky-top.navbar-dark .navbar-brand img {
     max-height: 45px;
-}
+} */
 
 @media (max-width: 991.98px) {
     .sticky-top.navbar-dark {
@@ -210,20 +210,47 @@
 
 /*** Service ***/
 .service-item {
-    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
-    transition: .5s;
+    height: 100%;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
 }
 
 .service-item:hover {
-    background: var(--primary);
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
-.service-item * {
-    transition: .5s;
+/* Ensure text remains visible on hover */
+.service-item .p-4 {
+    background-color: #fff;
+    transition: all 0.3s;
 }
 
-.service-item:hover * {
-    color: var(--light) !important;
+.service-item:hover .p-4 {
+    background-color: #fff; /* Keep background white on hover */
+}
+
+.service-item h5,
+.service-item p,
+.service-item i,
+.service-item li {
+    transition: all 0.3s;
+}
+
+.service-item:hover h5,
+.service-item:hover p,
+.service-item:hover li {
+    color: #333; /* Keep text dark on hover */
+}
+
+.service-item:hover i.text-primary,
+.service-item:hover .fa-check.text-primary {
+    color: var(--primary) !important; /* Keep icons in primary color */
+}
+
+.service-item ul li {
+    margin-bottom: 8px;
 }
 
 
@@ -599,9 +626,10 @@ html {
 
 .map-responsive {
     overflow: hidden;
-    padding-bottom: 56.25%;
     position: relative;
-    height: 0;
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .map-responsive iframe {
@@ -610,6 +638,7 @@ html {
     height: 100%;
     width: 100%;
     position: absolute;
+    border-radius: 10px;
 }
 
 /* Footer link hover effects */
@@ -744,4 +773,289 @@ html {
 
 .img-hover:hover {
     transform: scale(1.05);
+}
+
+/* Logo Styling */
+.navbar-brand img {
+    transition: transform 0.3s ease;
+    height: 120px !important;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.05);
+}
+
+/* Adjust navbar padding to accommodate larger logo */
+.navbar {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+@media (max-width: 1200px) {
+    .navbar-brand img {
+        height: 100px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-brand img {
+        height: 90px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 80px !important;
+    }
+    
+    .navbar-brand h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 70px !important;
+    }
+    
+    .navbar-brand h1 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Footer Logo Styling */
+.footer-logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-logo {
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-logo {
+        max-width: 150px;
+    }
+}
+
+/* Responsive adjustments for map */
+@media (max-width: 768px) {
+    .map-responsive {
+        height: 110px;
+    }
+}
+
+@media (max-width: 576px) {
+    .map-responsive {
+        height: 100px;
+    }
+}
+
+/* Location Video Styling for Portrait Video */
+.location-video-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    height: 450px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Black background for letterboxing */
+}
+
+.location-video-container video {
+    height: 100%;
+    width: auto; /* Auto width for portrait video */
+    max-width: 100%; /* Ensure it doesn't overflow horizontally */
+    object-fit: contain; /* Changed from cover to contain */
+}
+
+/* For very wide screens, limit the container width to avoid excessive stretching */
+@media (min-width: 1200px) {
+    .location-video-container {
+        max-width: 800px;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .location-video-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .location-video-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    .location-video-container {
+        height: 300px;
+    }
+}
+
+/* Event Gallery Styling */
+.event-item {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
+}
+
+.event-item:hover {
+    transform: translateY(-10px);
+}
+
+.event-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.event-item:hover img {
+    transform: scale(1.1);
+}
+
+.event-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+}
+
+.event-overlay small {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Gallery Styling */
+.gallery-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gallery-filter-buttons .btn {
+    margin: 5px;
+    transition: all 0.3s;
+}
+
+.gallery-filter-buttons .btn.active {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.gallery-item {
+    margin-bottom: 30px;
+    transition: all 0.5s;
+}
+
+.gallery-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    height: 250px;
+}
+
+.gallery-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-img:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 43, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.gallery-img:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: rgba(15, 23, 43, 0.7);
+    color: #fff;
+    text-align: center;
+}
+
+.gallery-content h5 {
+    margin-bottom: 5px;
+    color: var(--primary);
+}
+
+.gallery-content p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.gallery-item.hide {
+    display: none;
+}
+
+.gallery-item.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
