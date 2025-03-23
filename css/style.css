@@ -778,7 +778,8 @@ html {
 /* Logo Styling */
 .navbar-brand img {
     transition: transform 0.3s ease;
-    height: 120px !important;
+    height: 100px !important;
+    padding: 2px 0px;
 }
 
 .navbar-brand:hover img {
@@ -786,10 +787,10 @@ html {
 }
 
 /* Adjust navbar padding to accommodate larger logo */
-.navbar {
-    padding-top: 0.5rem !important;
+/* .navbar {
+    padding-top: -0.5rem !important;
     padding-bottom: 0.5rem !important;
-}
+} */
 
 @media (max-width: 1200px) {
     .navbar-brand img {
@@ -1057,5 +1058,25 @@ html {
     }
     100% {
         opacity: 1;
+    }
+}
+
+.larger-image {
+    width: 150px!important; /* Adjust this value to make the image larger */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.d-flex.align-items-center {
+    align-items: flex-start; /* Align items to the top */
+}
+
+.w-100.d-flex.flex-column.text-start.ps-4 {
+    flex-grow: 1; /* Allow text container to grow */
+}
+
+@media (max-width: 768px) {
+    .larger-image {
+        width: 100px; /* Smaller size for mobile */
     }
 }
